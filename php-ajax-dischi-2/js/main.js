@@ -1,7 +1,7 @@
 const app = new Vue({
     el: "#app",
     data: {
-        url: "localhost",
+        url: "https://flynn.boolean.careers/exercises/api/array/music",
         elements: null,
         filteredElements: null,
         filterInput: '',
@@ -9,9 +9,10 @@ const app = new Vue({
     },
     mounted: function() {
         axios
-            .get("https://flynn.boolean.careers/exercises/api/array/music")
+            .get("http://localhost:8888/database.php")
             .then(response => {
                 (this.elements = response.data.response);
+                console.log(response);
                 this.filteredElements = this.elements;
                 this.filteredGenres = new Set();
                 for (let i = 0; i < this.filteredElements.length; i++) {
