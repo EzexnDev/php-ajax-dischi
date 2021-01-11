@@ -14,9 +14,9 @@ $array = json_decode(curl_exec($call));
 
 curl_close($call);
 
-$giulia = file_get_contents('response3.js');
+$response = file_get_contents('response3.js');
 
-$decoded_response = json_decode($giulia, true);
+$decoded_response = json_decode($response, true);
 
 $encoded_response = json_encode($decoded_response);
 
